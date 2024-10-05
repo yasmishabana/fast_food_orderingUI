@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fast_food_ordering_ui/custom_widgets/side_heading_text.dart';
 import 'package:fast_food_ordering_ui/item_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +13,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List foods = ["Burger", "Pizza", "Snacks", "Water"];
-  List foods2 = ["Chicken Burger", "Cheese Pizza"];
+  List foods2 = ["Chicken Burger", "Cheese Pizza"]; 
+  List description =["Mized pizza with beef ,chilli and cheese",""];
+  
   List<Color> bgColors = [
     const Color(0xFFFBDCDA),
     const Color(0xFFD4EEF3),
@@ -235,12 +239,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 shrinkWrap: true,
                 itemCount: foods2.length,
                 itemBuilder: (context, index) {
+                 // log("================"+foods2[index]);
                   return InkWell(
                     onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ItemScreen()));
+                              builder: (context) =>  ItemScreen(name:foods2[index])));
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width / 1.4,
