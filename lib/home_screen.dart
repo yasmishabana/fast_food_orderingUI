@@ -1,4 +1,5 @@
 import 'package:fast_food_ordering_ui/custom_widgets/side_heading_text.dart';
+import 'package:fast_food_ordering_ui/item_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -235,7 +236,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: foods2.length,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ItemScreen()));
+                    },
                     child: Container(
                       width: MediaQuery.of(context).size.width / 1.4,
                       margin: const EdgeInsets.only(
@@ -288,7 +294,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     const SizedBox(
                                       height: 5,
                                     ),
-                                   const Row(
+                                    const Row(
                                       children: [
                                         Icon(
                                           Icons.star,
@@ -304,8 +310,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         SizedBox(width: 5),
                                         Text(
                                           "(941 Ratings)",
-                                          style: TextStyle(
-                                              color: Colors.black45),
+                                          style:
+                                              TextStyle(color: Colors.black45),
                                         ),
                                       ],
                                     )
@@ -340,10 +346,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           topLeft: Radius.circular(10),
                                         ),
                                       ),
-                                      child: Text("\$15.89", style: TextStyle(
-                                        fontSize: 16,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),),
+                                      child: Text(
+                                        "\$15.89",
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      ),
                                     )
                                   ],
                                 )
@@ -358,7 +367,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(
-              height:50,
+              height: 50,
             ),
           ],
         ),
