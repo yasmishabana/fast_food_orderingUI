@@ -1,7 +1,11 @@
 import 'package:fast_food_ordering_ui/welcome_screen.dart';
 import 'package:flutter/material.dart';
+//import 'package:flutter/services.dart';
 
 void main() {
+    // Ensure that the app runs in full-screen mode.
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const MyApp());
 }
 
